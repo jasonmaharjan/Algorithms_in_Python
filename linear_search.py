@@ -58,7 +58,7 @@ while size <= 100000000:
     execution_time_worst.append(elapsed_time_worst)
     print(elapsed_time_worst)
     
-    size = size *10    # Step size is 10000
+    size = size *10    # Step size is 10
 
 # Results
 input_df = pd.DataFrame(input_size, columns = ['input-size'])
@@ -85,17 +85,3 @@ plt.xlabel('Input Size')
 plt.ylabel('Execution Time')
 plt.plot(input_size, execution_time_worst, c = 'red')
 plt.show()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
