@@ -34,11 +34,11 @@ input_size = []
 execution_time_best = []
 execution_time_worst = []
 
-size = 1000
+size = 10000
 
-while size <= 100000000:
+while size <= 1000000:
     input_size.append(size)   
-    data = random.sample(range(10000000),size)
+    data = random.sample(range(1000000),size)
     
      # for best case
     start_time = time()
@@ -47,7 +47,6 @@ while size <= 100000000:
     elapsed_time_best = end_time - start_time
     
     execution_time_best.append(elapsed_time_best)
-    print(elapsed_time_best)
     
     # for worst case
     start_time = time()
@@ -58,7 +57,7 @@ while size <= 100000000:
     execution_time_worst.append(elapsed_time_worst)
     print(elapsed_time_worst)
     
-    size = size *10    # Step size is 10
+    size = size + 10000    # Step size is 10
 
 # Results
 input_df = pd.DataFrame(input_size, columns = ['input-size'])
