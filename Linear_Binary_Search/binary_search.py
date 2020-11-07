@@ -3,11 +3,8 @@ from time import time, time_ns
 import unittest
 import matplotlib.pyplot as plt
 import pandas as pd
-import more_itertools as mit
-import numpy as np
 
 # Binary Search Algorithm
-
 def binary_search(data, value):
     l= 0
     r= len(data)-1
@@ -51,7 +48,7 @@ execution_time_worst = []
 
 size = 10000
 MIN = 10000
-MAX = 10000000
+MAX = 100000000
 
 while size <= 1000000:  
     input_size.append(size)   
@@ -72,7 +69,7 @@ while size <= 1000000:
     start_time = time_ns()
     index_worst = binary_search(data, -1) 
     end_time = time_ns()
-    elapsed_time_worst = (end_time - start_time) 
+    elapsed_time_worst = (end_time - start_time)
     
     execution_time_worst.append(elapsed_time_worst)
     
@@ -88,23 +85,19 @@ print(result)
 
 
 # Plotting the input-size VS execution-time (for best-case)
-fig3, ax3 = plt.subplots()
-ax3.plot(input_size, execution_time_worst, color='red', marker = "o", ls="")
-ax3.autoscale(enable=True, axis="y", tight=False)
-plt.title('Input-size VS execution-time for Best case of linear search')
+plt.figure(figsize=(12,8))
+plt.title('Input-size VS execution-time for Best case of binary search')
 plt.xlabel('Input Size')
 plt.ylabel('Execution Time')
 plt.plot(input_size, execution_time_best, c = 'green')
 plt.show()
 
-
 # Plotting the input-size VS execution-time (for worst-case)
-fig3, ax3 = plt.subplots()
-ax3.plot(input_size, execution_time_worst, color='red', marker = "o", ls="")
-ax3.autoscale(enable=True, axis="y", tight=False)
-plt.title('Input-size VS execution-time for Worst case of linear search')
+plt.figure(figsize=(12,8))
+plt.title('Input-size VS execution-time for Worst case of binary search')
 plt.xlabel('Input Size')
 plt.ylabel('Execution Time')
+plt.plot(input_size, execution_time_worst, c = 'red')
 plt.show()
 
     
