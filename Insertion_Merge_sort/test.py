@@ -1,15 +1,17 @@
 import unittest
 from sorting import insertionSort
+from sorting import mergeSort
 
 class SortingTestCase(unittest.TestCase):
 
    def test_insertion_sort(self):
-      input = [3, 2, 1, 5, 4]
-      output = [1, 2, 3, 4, 5]
+      input = [10, 2, 13, 8, 16, 14]
+      output = [2, 8, 10, 13, 14, 16]
 
-      insertionSort(input)
-
+      #insertionSort(input)
+      mergeSort(input, 0, 5)
       self.assertListEqual(input,output)
 
 if __name__ == '__main__':
    unittest.main()
+   
