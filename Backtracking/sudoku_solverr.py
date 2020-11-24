@@ -17,6 +17,7 @@ def checkGrid_full(grid):
   # Grid is complete
   return 1
  
+# Grid Solver
 def solveGrid(grid):
    for i in range(0,81):
       row = i // 9
