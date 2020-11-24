@@ -1,3 +1,12 @@
+# display initial grid
+def displayPartialGrid(grid):
+   print('\n')
+   for i in range(9):
+      for j in range(9):
+         print (grid[i][j], end = ' ')
+      print('\n')
+
+# display solution
 def displayGrid(grid):
    print('\n')
    for i in range(9):
@@ -81,7 +90,11 @@ if __name__=="__main__":
    grid.append([0, 0, 0, 0, 0, 0, 0, 7, 4])
    grid.append([0, 0, 5, 2, 0, 6, 3, 0, 0])     
 
+   print("Given partial grid is: ")
+   displayPartialGrid(grid)
+
    if(solveGrid(grid)):
+      print("\nThe solution obtained is: ")
       displayGrid(grid)
    else:
       print ("Solution doesn't exist for the given sudoku")
